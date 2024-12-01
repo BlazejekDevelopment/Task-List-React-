@@ -1,12 +1,13 @@
 .container {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 6px 0px;
+  display: flex;
 }
 
 .text {
-  color: white;
-  font-size: 17px;
+  font-family: monospace;
   font-weight: 600;
+  font-size: 17px;
+  color: white;
 }
