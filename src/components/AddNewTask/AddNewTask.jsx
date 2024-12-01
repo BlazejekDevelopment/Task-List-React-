@@ -1,24 +1,26 @@
-import style from "./AddNewTask.module.css";
+import styles from "./AddNewTask.module.css";
 import { useState } from "react";
 
 function AddNewTask({ setTasksList }) {
   const [taskName, setTaskName] = useState("");
 
   function handleAddTask() {
-    setTasksList((t) => [...t, taskName]);
+    if (taskName.trim() !== "") {
+      setTasksList((prevTasks) => [...prevTasks, taskName]);
+    }
   }
 
   return (
-    <div className={style.container}>
-      <h2 className={style.title}>Nowe zadanie</h2>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Nowe zadanie</h2>
       <input
-        className={style.input}
+        className={styles.input}
         type="text"
         placeholder="Nazwa zadania"
         value={taskName}
         onChange={(e) => setTaskName(e.target.value)}
       />
-      <button className={style.button} id="Button" onClick={handleAddTask}>
+      <button className={styles.button} onClick={handleAddTask}>
         +
       </button>
     </div>

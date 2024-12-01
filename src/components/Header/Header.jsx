@@ -1,4 +1,4 @@
-import stampImage from "../assets/Stamp.png";
+import stampImage from "../../assets/Stamp.png";
 import styles from "./Header.module.css";
 
 function Header() {

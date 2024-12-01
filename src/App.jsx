@@ -1,6 +1,6 @@
-import Header from "./Header/Header.jsx";
-import AddNewTask from "./AddNewTask/AddNewTask.jsx";
-import TasksList from "./TasksList/TasksList.jsx";
+import Header from "./components/Header/Header.jsx";
+import AddNewTask from "./components/AddNewTask/AddNewTask.jsx";
+import TasksList from "./components/TasksList/TasksList.jsx";
 import { useState } from "react";
 
 function App() {

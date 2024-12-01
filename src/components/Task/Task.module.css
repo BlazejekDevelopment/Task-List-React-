@@ -1,0 +1,45 @@
+.container {
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0px;
+  display: flex;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.text {
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 17px;
+  max-width: 200px;
+  overflow-x: hidden;
+  color: white;
+  word-break: break;
+  padding-left: 10px;
+}
+
+.iamge {
+  height: 20px;
+}
+
+@media screen and (min-width: 500px) {
+  .text {
+    font-size: 22px;
+    max-width: 325px;
+  }
+
+  .iamge {
+    height: 30px;
+    max-width: 325px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .text {
+    max-width: 565px;
+    min-width: 565px;
+    font-size: 28px;
+  }
+}
