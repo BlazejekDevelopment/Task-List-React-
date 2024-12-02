@@ -18,10 +18,10 @@
 
 .checboxContainer span {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 5px;
-  border: 0.5px solid #777777;
+  border: 1.5px solid #777777;
 }
 
 .input {
