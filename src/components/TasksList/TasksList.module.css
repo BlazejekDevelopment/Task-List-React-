@@ -11,6 +11,17 @@
   font-family: monospace;
 }
 
+.warrningDel {
+  margin-bottom: 20px;
+  display: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: monospace;
+  list-style: none;
+  text-align: center;
+}
+
 @media screen and (min-width: 850px) {
   .title {
     font-size: 16px;

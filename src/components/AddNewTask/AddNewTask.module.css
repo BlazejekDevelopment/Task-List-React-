@@ -15,6 +15,16 @@
   left: 0px;
 }
 
+.warning {
+  position: absolute;
+  font-family: monospace;
+  color: #365fac;
+  font-size: 14px;
+  top: 50px;
+  left: 0px;
+  opacity: 0;
+}
+
 .input {
   background-color: #131313;
   border-radius: 8px;

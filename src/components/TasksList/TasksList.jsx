@@ -1,15 +1,19 @@
 import Task from "../Task/Task";
-import style from "./TasksList.module.css";
+import styles from "./TasksList.module.css";
 import PropTypes from "prop-types";
 
 function TasksList({ tasksList, setTasksList }) {
   function handleDeleteTask(indexOfElement) {
     setTasksList(tasksList.filter((_, index) => index !== indexOfElement));
   }
+
   return (
-    <div className={style.container}>
-      <h2 className={style.title}>Twoje zadania</h2>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Twoje zadania</h2>
       <ul>
+        <li className={styles.warrningDel} id="warrningDel">
+          Brak zadań do wykonania...
+        </li>
         {tasksList.map((task, index) => (
           <Task
             taskName={task}

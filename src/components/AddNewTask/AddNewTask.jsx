@@ -8,6 +8,10 @@ function AddNewTask({ setTasksList }) {
   function handleAddTask() {
     if (taskName.trim() !== "") {
       setTasksList((prevTasks) => [...prevTasks, taskName]);
+      document.querySelector("#warning").style.opacity = 0;
+      setTaskName("");
+    } else {
+      document.querySelector("#warning").style.opacity = 1;
     }
   }
 
@@ -21,7 +25,10 @@ function AddNewTask({ setTasksList }) {
         value={taskName}
         onChange={(e) => setTaskName(e.target.value)}
       />
-      <button className={styles.button} onClick={handleAddTask}>
+      <h2 className={styles.warning} id="warning">
+        Nie wprowadzono nazwy
+      </h2>
+      <button id="button" className={styles.button} onClick={handleAddTask}>
         +
       </button>
     </div>
