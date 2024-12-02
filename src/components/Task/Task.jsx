@@ -1,4 +1,4 @@
-import bin from "../../assets/bin.png";
+import bin from "../../assets/Bin.png";
 import styles from "./Task.module.css";
 import PropTypes from "prop-types";
 
