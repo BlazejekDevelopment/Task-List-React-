@@ -1,0 +1,18 @@
+.container {
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+
+.title {
+  margin-bottom: 20px;
+  color: #365fac;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+@media screen and (min-width: 850px) {
+  .title {
+    font-size: 16px;
+  }
+}

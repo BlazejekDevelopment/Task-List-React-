@@ -1,0 +1,28 @@
+.container {
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  display: flex;
+}
+
+.image {
+  width: 27.5px;
+}
+
+.header {
+  font-family: monospace;
+  margin-left: 15px;
+  font-weight: bold;
+  font-size: 22.2px;
+  color: white;
+}
+
+@media screen and (min-width: 850px) {
+  .header {
+    font-size: 31px;
+  }
+
+  .image {
+    width: 38px;
+  }
+}
