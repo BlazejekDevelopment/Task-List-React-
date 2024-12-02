@@ -1,35 +1,25 @@
 .container {
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 100px;
   display: flex;
 }
 
 .image {
-  width: 27px;
+  width: 27.5px;
 }
 
 .header {
   font-family: monospace;
   margin-left: 15px;
   font-weight: bold;
-  font-size: 23px;
+  font-size: 22.2px;
   color: white;
-}
-
-@media screen and (min-width: 500px) {
-  .header {
-    font-size: 30px;
-  }
-
-  .image {
-    width: 32px;
-  }
 }
 
 @media screen and (min-width: 850px) {
   .header {
-    font-size: 38px;
+    font-size: 31px;
   }
 
   .image {

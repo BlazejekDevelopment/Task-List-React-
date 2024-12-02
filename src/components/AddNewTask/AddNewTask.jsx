@@ -1,5 +1,6 @@
 import styles from "./AddNewTask.module.css";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 function AddNewTask({ setTasksList }) {
   const [taskName, setTaskName] = useState("");
@@ -26,5 +27,9 @@ function AddNewTask({ setTasksList }) {
     </div>
   );
 }
+
+AddNewTask.propTypes = {
+  setTasksList: PropTypes.func.isRequired,
+};
 
 export default AddNewTask;

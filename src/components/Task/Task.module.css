@@ -7,11 +7,41 @@
 
 .wrapper {
   display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+.checboxContainer {
+  align-items: center;
+  display: flex;
+}
+
+.checboxContainer span {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 0.5px solid #777777;
+}
+
+.input {
+  width: 23px;
+  height: 23px;
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.input:checked {
+  opacity: 1;
 }
 
 .text {
   font-family: monospace;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 17px;
   max-width: 200px;
   overflow-x: hidden;
@@ -20,26 +50,15 @@
   padding-left: 10px;
 }
 
-.iamge {
+.image {
   height: 20px;
-}
-
-@media screen and (min-width: 500px) {
-  .text {
-    font-size: 22px;
-    max-width: 325px;
-  }
-
-  .iamge {
-    height: 30px;
-    max-width: 325px;
-  }
+  cursor: pointer;
 }
 
 @media screen and (min-width: 850px) {
   .text {
     max-width: 565px;
     min-width: 565px;
-    font-size: 28px;
+    font-size: 20px;
   }
 }
