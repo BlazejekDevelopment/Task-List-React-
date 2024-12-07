@@ -7,7 +7,10 @@ function AddNewTask({ setTasksList }) {
 
   function handleAddTask() {
     if (taskName.trim() !== "") {
-      setTasksList((prevTasks) => [...prevTasks, taskName]);
+      setTasksList((prevTasks) => [
+        ...prevTasks,
+        { name: taskName, isChecked: false },
+      ]);
       document.querySelector("#warning").style.opacity = 0;
       setTaskName("");
     } else {

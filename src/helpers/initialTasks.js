@@ -1,5 +1,5 @@
 export const initialTasks = [
-  "Wyprowadzić psa",
-  "Posprzątać pokój",
-  "Założyć biznes",
+  { name: "Wyprowadzić psa", isChecked: false },
+  { name: "Posprzątać pokój", isChecked: false },
+  { name: "Założyć biznes", isChecked: false },
 ];
