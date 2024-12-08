@@ -2,7 +2,9 @@ import bin from "../../assets/Bin.png";
 import styles from "./Task.module.css";
 import PropTypes from "prop-types";
 
-function Task({ taskName, handleDelateTask, isChecked, handleChange }) {
+function Task({ task, handleDeleteTask, handleChange }) {
+  const { name, isChecked } = task;
+
   return (
     <li className={styles.container}>
       <div className={styles.wrapper}>
@@ -17,22 +19,22 @@ function Task({ taskName, handleDelateTask, isChecked, handleChange }) {
           </span>
         </div>
         <p className={`${styles.text} ${isChecked && styles.taskChecked}`}>
-          {taskName}
+          {name}
         </p>
       </div>
       <img
         src={bin}
         alt="Bin"
         className={styles.image}
-        onClick={handleDelateTask}
+        onClick={handleDeleteTask}
       />
     </li>
   );
 }
 
 Task.propTypes = {
-  taskName: PropTypes.string.isRequired,
-  handleDelateTask: PropTypes.func.isRequired,
+  handleDeleteTask: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default Task;

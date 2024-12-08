@@ -3,16 +3,41 @@ import AddNewTask from "./components/AddNewTask/AddNewTask.jsx";
 import TasksList from "./components/TasksList/TasksList.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import { initialTasks } from "./helpers/initialTasks.js";
-import { useState } from "react";
+import { useState, createContext } from "react";
+
+export const TasksListContext = createContext();
 
 function App() {
   const [tasksList, setTasksList] = useState(initialTasks);
 
+  function handleDeleteTask(indexOfElement) {
+    setTasksList(tasksList.filter((_, index) => index !== indexOfElement));
+  }
+
+  function handleChange(indexOfElement) {
+    setTasksList(
+      tasksList.map((task, index) => {
+        if (index === indexOfElement) {
+          return {
+            name: task.name,
+            isChecked: !task.isChecked,
+          };
+        }
+
+        return task;
+      })
+    );
+  }
+
   return (
     <>
       <Header />
-      <AddNewTask setTasksList={setTasksList} />
-      <TasksList tasksList={tasksList} setTasksList={setTasksList} />
+      <TasksListContext.Provider
+        value={{ tasksList, setTasksList, handleDeleteTask, handleChange }}
+      >
+        <AddNewTask />
+        <TasksList />
+      </TasksListContext.Provider>
       <Footer />
     </>
   );

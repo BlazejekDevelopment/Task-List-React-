@@ -1,28 +1,11 @@
 import Task from "../Task/Task";
 import styles from "./TasksList.module.css";
-import PropTypes, { func } from "prop-types";
+import { TasksListContext } from "../../App";
+import { useContext } from "react";
 
-function TasksList({ tasksList, setTasksList }) {
-  function handleDeleteTask(indexOfElement) {
-    setTasksList(tasksList.filter((_, index) => index !== indexOfElement));
-  }
-
-  function handleChange(indexOfElement) {
-    setTasksList(
-      tasksList.map((task, index) => {
-        if (index === indexOfElement) {
-          return {
-            name: task.name,
-            isChecked: !task.isChecked,
-          };
-        }
-
-        return task;
-      })
-    );
-  }
-
-  setTasksList(tasksList.sort((a, b) => a.name - b.name));
+function TasksList() {
+  const { tasksList, handleDeleteTask, handleChange } =
+    useContext(TasksListContext);
 
   return (
     <div className={styles.container}>
@@ -36,11 +19,10 @@ function TasksList({ tasksList, setTasksList }) {
           .map((task, index) => {
             return (
               <Task
-                taskName={task.name}
+                task={task}
                 key={index}
-                handleDelateTask={() => handleDeleteTask(index)}
+                handleDeleteTask={() => handleDeleteTask(index)}
                 handleChange={() => handleChange(index)}
-                isChecked={task.isChecked}
               />
             );
           })}
@@ -48,10 +30,5 @@ function TasksList({ tasksList, setTasksList }) {
     </div>
   );
 }
-
-TasksList.propTypes = {
-  tasksList: PropTypes.array.isRequired,
-  setTasksList: PropTypes.func.isRequired,
-};
 
 export default TasksList;
